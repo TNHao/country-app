@@ -16,9 +16,9 @@ export default class Detail extends Component {
 
     render() {
         const { country } = this.state;
-        
+
         if (Object.keys(country).length === 0) return <Loader />;
-        
+
         const { topLevelDomain, currencies, languages, borders } = country;
 
         return (
@@ -48,7 +48,7 @@ export default class Detail extends Component {
                             </div>
                             <div className="country-border mt-4">
                                 <h5 className="mb-4">Border Countries:</h5>
-                                {borders.map((obj) => <BorderCountryButton code={obj} update={this.update}/>)}
+                                {borders.map((obj) => <BorderCountryButton key={obj} code={obj} update={this.update} />)}
                             </div>
                         </div>
                     </div>
@@ -62,5 +62,19 @@ export default class Detail extends Component {
         let country = (await getContryApi(`alpha/${code}`)).data;
 
         this.setState({ country });
+    }
+
+    async shouldComponentUpdate(nextProps, nextState) {
+        if (JSON.stringify(nextState) !== JSON.stringify(this.state)) return true;
+
+        if (nextProps.match.url !== this.props.match.url) {
+            let code = this.props.match.params.code;
+            let country = (await getContryApi(`alpha/${code}`)).data;
+
+            this.setState({ country });
+            return true;
+        }
+
+        return false;
     }
 }
