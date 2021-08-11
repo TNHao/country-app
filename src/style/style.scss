@@ -1,0 +1,16 @@
+@import './variables';
+@import './mixins';
+@import './config';
+
+// components stylesheet
+@import '../components/Header/header';
+@import '../components/Search/search';
+@import '../components/DropDown/drop-down';
+@import '../components/CountryCard/country-card';
+@import '../components/BorderCountryButton/borderCountryButton';
+@import '../components/BackButton/backButton';
+@import '../components/Loader/Loader';
+@import '../components/LoadMoreButton/loadMoreButton';
+@import '../components/Footer/footer';
+
+@import '../pages/Detail/detail';

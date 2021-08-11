@@ -1,0 +1,14 @@
+.footer{
+    background-color: var(--component-bg-color);
+
+    .footer-link{
+        color: var(--main-text-color);
+        width: 55px;
+        height: 55px;
+
+        &:hover{
+            background-color: var(--main-bg-color);
+            border-radius: 100%;
+        }
+    }
+}

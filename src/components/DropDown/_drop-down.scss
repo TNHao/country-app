@@ -1,0 +1,24 @@
+.dropdown{
+    width: 190px;
+    font-size: 16px;
+    color: var(--main-text-color);
+
+    @include responsiveToSize(575px){
+        width: 100%;
+    }
+
+    .dropdown-btn{
+        padding: 12px 20px;
+    }
+
+    .dropdown-menu{
+        background-color: var(--component-bg-color);
+
+        .dropdown-item{
+            color: var(--main-text-color);
+            &:hover{
+                background-color: var(--main-bg-color);
+            }
+        }       
+    }
+}

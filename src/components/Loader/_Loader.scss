@@ -1,0 +1,40 @@
+#loader .loaderSquare{
+	background: var(--loader-bg);
+	border-radius: 4px;
+
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+
+	height: 60px;
+	width: 60px;
+}
+
+#loader .loaderSquare::before{
+	content: "";
+	width: 20px;
+	height: 20px;
+	background-color: white;
+
+	position: absolute;
+	top: calc(50% - 20px);
+	left: calc(50% - 20px);
+	
+	animation: movingSquare 1.4s infinite;
+}
+
+@keyframes movingSquare{
+	0%{
+		transform: none;
+	}
+	25%{
+		transform: translateX(100%);
+	}
+	50%{
+		transform: translate(100%, 100%);
+	}
+	75%{
+		transform: translateY(100%);
+	}
+}

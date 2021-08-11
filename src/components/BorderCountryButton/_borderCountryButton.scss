@@ -1,0 +1,22 @@
+.country-border__btn{
+    width: 90px;
+    padding-left: 28px;
+    transition: all 0.5s;
+    color: var(--main-text-color);
+
+    svg{
+        margin-left: 5px;
+        opacity: 0;
+
+        transition: all 0.5s;
+    }
+
+    &:hover{
+        padding-left: 17px;
+        color: var(--main-text-color);
+
+        svg{
+            opacity: 1;
+        }
+    }
+}

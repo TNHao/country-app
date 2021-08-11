@@ -1,0 +1,33 @@
+.card{
+    border: none;
+    border-radius: 0.5rem;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+
+    background-color: var(--component-bg-color);
+
+    &:hover{
+        background-color: hsla(0,0%,100%,.13725490196078433);
+    }
+
+    @media screen and (max-width: 575px) {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .card-img{       
+        img{
+            object-fit: cover;
+            inline-size: 100%;
+            block-size: 100%;
+        }
+    }
+
+    .card-body{
+        color: var(--main-text-color);
+
+        p{
+            font-size: 14px;
+        }
+    }
+}
