@@ -17,7 +17,7 @@ export default class Detail extends Component {
     render() {
         const { country } = this.state;
 
-        if (Object.keys(country).length === 0) return <Loader />;
+        if (Object.keys(country).length === 0) return (<div style={{padding: "35px"}}><Loader /></div>);
 
         const { topLevelDomain, currencies, languages, borders } = country;
 
