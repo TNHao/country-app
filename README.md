@@ -19,8 +19,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: /*update later*/
-- Live Site URL: /*update later*/
+- Solution URL: https://github.com/TNHao/country-app
+- Live Site URL: https://country-app-jet.vercel.app/
 
 ## My process
 
