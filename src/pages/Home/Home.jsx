@@ -19,7 +19,10 @@ export default class Home extends Component {
     }
 
     handleLoad = () => {
-        this.setState({ renderSize: this.state.renderSize += 12 });
+        let {renderSize} = this.state;
+        renderSize += 12;
+
+        this.setState({ renderSize });
     }
 
     render() {
