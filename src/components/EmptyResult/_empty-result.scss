@@ -1,0 +1,19 @@
+.empty-result{
+    color: var(--main-text-color);
+    height: 42vh;
+    font-size: 40px;
+
+    svg{
+        transform: scale(230%);
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    @include responsiveToSize(768px){
+        font-size: 30px;
+    }
+
+    @include responsiveToSize(576px){
+        font-size: 20px;
+    }
+}

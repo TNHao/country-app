@@ -1,0 +1,65 @@
+.not-found{
+    color: var(--main-text-color);
+    height: 61vh;
+    width: 100%;
+
+    .not-found-number{
+        font-size: 300px;
+        font-weight: bolder;
+
+        color: var(--component-bg-color);
+
+        @include responsiveToSize(576px){
+           font-size: 250px;
+        }
+        
+        @include responsiveToSize(400px){
+           font-size: 200px;
+        }
+    }
+
+    .not-found-text{
+        width: 100%;
+   
+        h1{
+            font-size: 3rem;
+            font-weight: bolder;
+        }
+
+        a{
+            background-color: var(--toggle-btn-bg);
+            color: var(--toggle-btn-text);
+            font-weight: bold;
+        }
+
+        @include responsiveToSize(640px){
+            h1{
+                font-size: 2.5rem;
+            }
+        }
+
+        @include responsiveToSize(576px){
+            h1{
+                font-size: 2rem;
+            }
+
+            p{
+                font-size: 0.8rem;
+            }
+        }
+
+        @include responsiveToSize(400px){
+            h1{
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+    .not-found-text, .not-found-number{
+        position: absolute;
+        top: 50%;
+        left: 50%; 
+
+        transform: translate(-50%, -50%);
+    }
+}

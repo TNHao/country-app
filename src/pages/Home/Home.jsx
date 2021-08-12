@@ -5,6 +5,7 @@ import Search from '../../components/Search/Search';
 import Loader from '../../components/Loader/Loader';
 import { getContryApi } from '../../services/CountryServices';
 import LoadMoreButton from '../../components/LoadMoreButton/LoadMoreButton';
+import EmptyResult from '../../components/EmptyResult/EmptyResult';
 
 export default class Home extends Component {
     state = {
@@ -19,7 +20,7 @@ export default class Home extends Component {
     }
 
     handleLoad = () => {
-        let {renderSize} = this.state;
+        let { renderSize } = this.state;
         renderSize += 12;
 
         this.setState({ renderSize });
@@ -47,22 +48,13 @@ export default class Home extends Component {
                 {countries.length !== 0 &&
                     <div className="cards-container mt-5">
                         <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-5">
-                            {/* {!filterName && countries.map((country) => {
-                                return <CountryCard key={country.alpha3Code} country={country}/>
-                            })}
-                            {filterName && countries.filter((country) => {
-                                    return country.name.toLowerCase().includes(filterName.toLowerCase());
-                                }).map((country) => {
-                                    return <CountryCard key={country.alpha3Code} country={country}/>
-                                })
-                            } */}
-
-                            {renderCountries.map((country) => {
+                            {renderCountries.length !== 0 && renderCountries.map((country) => {
                                 return <CountryCard key={country.alpha3Code} country={country} />
                             })}
+                            {renderCountries.length === 0 && <EmptyResult searchInput={filterName}/>}
                         </div>
 
-                        {renderSize <= renderCountries.length && <LoadMoreButton handleLoad={this.handleLoad}/>}
+                        {renderSize <= renderCountries.length && <LoadMoreButton handleLoad={this.handleLoad} />}
                     </div>
                 }
             </div>
@@ -100,7 +92,7 @@ export default class Home extends Component {
         return false;
     }
 
-    componentWillUnmount(){
+    componentWillUnmount() {
         this.setState({ renderSize: 12 })
     }
 }
