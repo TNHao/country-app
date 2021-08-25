@@ -3,7 +3,7 @@ import { BsMoon } from "react-icons/bs";
 import { FaSun } from "react-icons/fa";
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { actSetCountryData, actSetError } from '../../store/actions/apiAction';
+import { actSetError } from '../../store/actions/apiAction';
 
 const getLocalStorage = () => {
     const data = localStorage.getItem('theme-checked');
