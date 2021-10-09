@@ -1,6 +1,6 @@
 import axios from "axios"; 
 
-const apiURL = 'https://restcountries.eu/rest/v2'; 
+const apiURL = 'https://restcountries.com/v2'; 
 
 export const getContryApi = (endPoint) => {
     return axios ({
