@@ -5,6 +5,7 @@ import { actSetCountryData, actSetError } from '../../store/actions/apiAction';
 
 export default function NotFound() {
     const dispatch = useDispatch();
+    document.title = "404 - Page not found";
 
     return (
         <div className="not-found text-center">

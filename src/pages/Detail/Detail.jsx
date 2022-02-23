@@ -11,7 +11,7 @@ import { actFetchCountryApi } from '../../store/actions/apiAction';
 export default function Detail() {
     const { code } = useParams();
 
-    const { loading, data: country, error} = useSelector(state => state.apiReducer);
+    const { loading, data: country, error } = useSelector(state => state.apiReducer);
     const dispatch = useDispatch();
 
     const { topLevelDomain, currencies, languages, borders } = country ? country : {};
@@ -25,6 +25,8 @@ export default function Detail() {
     if (error) return <NotFound />
 
     if (loading) return (<div style={{ padding: "35px" }}><Loader /></div>);
+
+    if (country.name) document.title = "All about " + country.name;
 
     return (
         <div className="detail container">

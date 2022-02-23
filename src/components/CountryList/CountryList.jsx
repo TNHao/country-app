@@ -27,7 +27,7 @@ export default function CountryList() {
         }
     }
 
-    useEffect(() => {   
+    useEffect(() => {
         return () => { // set renderSize back to 12 when component unmount
             setRenderSize(12);
         };
@@ -35,7 +35,8 @@ export default function CountryList() {
 
     useEffect(() => {
         const endPoint = region ? `region/${region}` : "all";
-
+        const title = region ? `${region} region`: `Around the world`;
+        document.title = title;
         // When region changed (URL changed), fetch api
         dispatch(actFetchCountryApi(endPoint));
     }, [region, dispatch]);
